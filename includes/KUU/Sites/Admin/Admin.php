@@ -6,7 +6,7 @@
   * @license MIT; https://www.oscommerce.com/license/mit.txt
   */
 
-namespace OSC\Sites\Admin;
+namespace KUU\Sites\Admin;
 
 use KUU\ZU\Apps;
 use KUU\ZU\Cookies;
@@ -157,20 +157,20 @@ class Admin extends \KUU\ZU\SitesAbstract
                         $page_namespace = explode('\\', $page);
                         $page_code = $page_namespace[count($page_namespace)-1];
 
-                        if (class_exists('OSC\Apps\\' . $vendor . '\\' . $app . '\\' . $page . '\\' . $page_code)) {
+                        if (class_exists('KUU\Apps\\' . $vendor . '\\' . $app . '\\' . $page . '\\' . $page_code)) {
                             $this->app = $vendor . '\\' . $app;
                             $this->route = $this->app . '\\' . $page;
                             $this->actions_index = 2;
 
-                            $class = 'OSC\Apps\\' . $this->app . '\\' . $page . '\\' . $page_code;
+                            $class = 'KUU\Apps\\' . $this->app . '\\' . $page . '\\' . $page_code;
                         }
                     }
                 }
             } else {
-                if (class_exists('OSC\Sites\\' . $this->code . '\Pages\\' . $req . '\\' . $req)) {
+                if (class_exists('KUU\Sites\\' . $this->code . '\Pages\\' . $req . '\\' . $req)) {
                     $page_code = $req;
 
-                    $class = 'OSC\Sites\\' . $this->code . '\Pages\\' . $page_code . '\\' . $page_code;
+                    $class = 'KUU\Sites\\' . $this->code . '\Pages\\' . $page_code . '\\' . $page_code;
                 }
             }
         }
@@ -181,7 +181,7 @@ class Admin extends \KUU\ZU\SitesAbstract
 
                 $this->page->runActions();
             } else {
-                trigger_error('OSC\Sites\Admin\Admin::setPage() - ' . $page_code . ': Page does not implement KUU\ZU\PagesInterface and cannot be loaded.');
+                trigger_error('KUU\Sites\Admin\Admin::setPage() - ' . $page_code . ': Page does not implement KUU\ZU\PagesInterface and cannot be loaded.');
             }
         }
     }

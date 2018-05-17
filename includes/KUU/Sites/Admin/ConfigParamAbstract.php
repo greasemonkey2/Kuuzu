@@ -6,7 +6,7 @@
   * @license MIT; https://www.oscommerce.com/license/mit.txt
   */
 
-namespace OSC\Sites\Admin;
+namespace KUU\Sites\Admin;
 
 use KUU\ZU\HTML;
 
