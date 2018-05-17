@@ -140,7 +140,7 @@ class Apps
         if (strpos($app, '\\') !== false) {
             list($vendor, $app) = explode('\\', $app, 2);
 
-            $metafile = KUUZU::BASE_DIR . 'Apps/' . basename($vendor) . '/' . basename($app) . '/oscommerce.json';
+            $metafile = KUUZU::BASE_DIR . 'Apps/' . basename($vendor) . '/' . basename($app) . '/kuuzu.json';
 
             if (is_file($metafile) && (($json = json_decode(file_get_contents($metafile), true)) !== null)) {
                 return $json;

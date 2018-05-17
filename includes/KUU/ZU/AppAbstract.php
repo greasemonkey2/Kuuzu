@@ -109,7 +109,7 @@ abstract class AppAbstract
         $this->code = $r->getShortName();
         $this->vendor = array_slice(explode('\\', $r->getNamespaceName()), -2, 1)[0];
 
-        $metafile = KUUZU::BASE_DIR . 'Apps/' . $this->vendor . '/' . $this->code . '/oscommerce.json';
+        $metafile = KUUZU::BASE_DIR . 'Apps/' . $this->vendor . '/' . $this->code . '/kuuzu.json';
 
         if (!is_file($metafile) || (($json = json_decode(file_get_contents($metafile), true)) === null)) {
             trigger_error('KUU\ZU\AppAbstract::setInfo(): ' . $this->vendor . '\\' . $this->code . ' - Could not read App information in ' . $metafile . '.');
