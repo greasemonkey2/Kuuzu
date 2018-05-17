@@ -8,32 +8,32 @@
 
 namespace OSC\Sites\Admin;
 
-use OSC\OM\Apps;
-use OSC\OM\Cookies;
-use OSC\OM\Db;
-use OSC\OM\ErrorHandler;
-use OSC\OM\FileSystem;
-use OSC\OM\Hooks;
-use OSC\OM\Language;
-use OSC\OM\MessageStack;
-use OSC\OM\OSCOM;
-use OSC\OM\Registry;
-use OSC\OM\Session;
+use KUU\ZU\Apps;
+use KUU\ZU\Cookies;
+use KUU\ZU\Db;
+use KUU\ZU\ErrorHandler;
+use KUU\ZU\FileSystem;
+use KUU\ZU\Hooks;
+use KUU\ZU\Language;
+use KUU\ZU\MessageStack;
+use KUU\ZU\KUUZU;
+use KUU\ZU\Registry;
+use KUU\ZU\Session;
 
-class Admin extends \OSC\OM\SitesAbstract
+class Admin extends \KUU\ZU\SitesAbstract
 {
     protected function init()
     {
-        global $PHP_SELF, $login_request, $cfgModules, $oscTemplate;
+        global $PHP_SELF, $login_request, $cfgModules, $kuuTemplate;
 
-        $OSCOM_Cookies = new Cookies();
-        Registry::set('Cookies', $OSCOM_Cookies);
+        $KUUZU_Cookies = new Cookies();
+        Registry::set('Cookies', $KUUZU_Cookies);
 
         try {
-            $OSCOM_Db = Db::initialize();
-            Registry::set('Db', $OSCOM_Db);
+            $KUUZU_Db = Db::initialize();
+            Registry::set('Db', $KUUZU_Db);
         } catch (\Exception $e) {
-            include(OSCOM::getConfig('dir_root', 'Shop') . 'includes/error_documents/maintenance.php');
+            include(KUUZU::getConfig('dir_root', 'Shop') . 'includes/error_documents/maintenance.php');
             exit;
         }
 
@@ -42,7 +42,7 @@ class Admin extends \OSC\OM\SitesAbstract
         Registry::set('MessageStack', new MessageStack());
 
 // set the application parameters
-        $Qcfg = $OSCOM_Db->get('configuration', [
+        $Qcfg = $KUUZU_Db->get('configuration', [
             'configuration_key as k',
             'configuration_value as v'
         ]);//, null, null, null, 'configuration'); // TODO add cache when supported by admin
@@ -59,23 +59,23 @@ class Admin extends \OSC\OM\SitesAbstract
 
 // set php_self in the global scope
         $req = parse_url($_SERVER['SCRIPT_NAME']);
-        $PHP_SELF = substr($req['path'], strlen(OSCOM::getConfig('http_path')));
+        $PHP_SELF = substr($req['path'], strlen(KUUZU::getConfig('http_path')));
 
-        $OSCOM_Session = Session::load();
-        Registry::set('Session', $OSCOM_Session);
+        $KUUZU_Session = Session::load();
+        Registry::set('Session', $KUUZU_Session);
 
-        $OSCOM_Session->start();
+        $KUUZU_Session->start();
 
-        $OSCOM_Language = new Language();
-        Registry::set('Language', $OSCOM_Language);
+        $KUUZU_Language = new Language();
+        Registry::set('Language', $KUUZU_Language);
 
 // set the language
         if (!isset($_SESSION['language']) || isset($_GET['language'])) {
-            if (isset($_GET['language']) && !empty($_GET['language']) && $OSCOM_Language->exists($_GET['language'])) {
-                $OSCOM_Language->set($_GET['language']);
+            if (isset($_GET['language']) && !empty($_GET['language']) && $KUUZU_Language->exists($_GET['language'])) {
+                $KUUZU_Language->set($_GET['language']);
             }
 
-            $_SESSION['language'] = $OSCOM_Language->get('code');
+            $_SESSION['language'] = $KUUZU_Language->get('code');
         }
 
 // redirect to login page if administrator is not yet logged in
@@ -114,25 +114,25 @@ class Admin extends \OSC\OM\SitesAbstract
             }
 
             if ($redirect == true) {
-                OSCOM::redirect(FILENAME_LOGIN, (isset($_SESSION['redirect_origin']['auth_user']) ? 'action=process' : ''));
+                KUUZU::redirect(FILENAME_LOGIN, (isset($_SESSION['redirect_origin']['auth_user']) ? 'action=process' : ''));
             }
         }
 
 // include the language translations
-        $OSCOM_Language->loadDefinitions('main');
+        $KUUZU_Language->loadDefinitions('main');
 
 // Prevent LC_ALL from setting LC_NUMERIC to a locale with 1,0 float/decimal values instead of 1.0 (see bug #634)
         $system_locale_numeric = setlocale(LC_NUMERIC, 0);
-        setlocale(LC_ALL, explode(';', OSCOM::getDef('system_locale')));
+        setlocale(LC_ALL, explode(';', KUUZU::getDef('system_locale')));
         setlocale(LC_NUMERIC, $system_locale_numeric);
 
         $current_page = basename($PHP_SELF);
 
-        if ($OSCOM_Language->definitionsExist(pathinfo($current_page, PATHINFO_FILENAME))) {
-            $OSCOM_Language->loadDefinitions(pathinfo($current_page, PATHINFO_FILENAME));
+        if ($KUUZU_Language->definitionsExist(pathinfo($current_page, PATHINFO_FILENAME))) {
+            $KUUZU_Language->loadDefinitions(pathinfo($current_page, PATHINFO_FILENAME));
         }
 
-        $oscTemplate = new \oscTemplate();
+        $kuuTemplate = new \kuuTemplate();
 
         $cfgModules = new \cfg_modules();
 
@@ -176,12 +176,12 @@ class Admin extends \OSC\OM\SitesAbstract
         }
 
         if (isset($class)) {
-            if (is_subclass_of($class, 'OSC\OM\PagesInterface')) {
+            if (is_subclass_of($class, 'KUU\ZU\PagesInterface')) {
                 $this->page = new $class($this);
 
                 $this->page->runActions();
             } else {
-                trigger_error('OSC\Sites\Admin\Admin::setPage() - ' . $page_code . ': Page does not implement OSC\OM\PagesInterface and cannot be loaded.');
+                trigger_error('OSC\Sites\Admin\Admin::setPage() - ' . $page_code . ': Page does not implement KUU\ZU\PagesInterface and cannot be loaded.');
             }
         }
     }

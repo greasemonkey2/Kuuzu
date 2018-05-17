@@ -8,7 +8,7 @@
 
 namespace OSC\Sites\Admin;
 
-use OSC\OM\HTML;
+use KUU\ZU\HTML;
 
 abstract class ConfigParamAbstract
 {
