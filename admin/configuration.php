@@ -94,7 +94,7 @@
   if ($show_listing === true) {
 ?>
 
-<table class="oscom-table table table-hover">
+<table class="kuuzu-table table table-hover">
   <thead>
     <tr class="info">
       <th><?= KUUZU::getDef('table_heading_configuration_title'); ?></th>

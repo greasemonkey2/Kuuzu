@@ -94,7 +94,7 @@
          '    <td class="dataTableContent" valign="top" style="white-space: nowrap;">' . HTML::outputProtected($module['title']) . '</td>' . "\n" .
          '    <td class="dataTableContent" valign="top">' . HTML::outputProtected($module['code']) . '</td>' . "\n" .
          '    <td class="dataTableContent" valign="top">' . $output . '</td>' . "\n" .
-         '    <td class="dataTableContent" align="center" valign="top">' . ((isset($secCheck->has_doc) && $secCheck->has_doc) ? '<a href="http://library.kuuzu.org/Wiki&oscom_2_3&security_checks&' . $module['code'] . '" target="_blank">' . HTML::image(KUUZU::linkImage('icons/preview.gif')) . '</a>' : '') . '</td>' . "\n" .
+         '    <td class="dataTableContent" align="center" valign="top">' . ((isset($secCheck->has_doc) && $secCheck->has_doc) ? '<a href="http://library.kuuzu.org/Wiki&kuuzu_1_&security_checks&' . $module['code'] . '" target="_blank">' . HTML::image(KUUZU::linkImage('icons/preview.gif')) . '</a>' : '') . '</td>' . "\n" .
          '  </tr>' . "\n";
   }
 ?>

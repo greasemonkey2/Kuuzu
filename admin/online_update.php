@@ -185,7 +185,7 @@
           }
 
           $downloadFile = HTTP::getResponse([
-            'url' => 'https://www.kuuzu.org/?Products&Download=oscom-' . $_POST['version'] . '-ou',
+            'url' => 'https://www.kuuzu.org/?Products&Download=kuuzu-' . $_POST['version'] . '-ou',
             'method' => 'post'
           ]);
 
@@ -611,7 +611,7 @@ $(function() {
       }
 
       $('#' + upDivId + ' .panel-body .row').html(data);
-      $('#' + upDivId + ' .panel-body .row').prepend('<a href="https://www.kuuzu.org/?RPC&GotoReleaseAnnouncement&v=oscom-' + version + '-ou" class="pull-right btn btn-info btn-sm" target="_blank"><i class="fa fa-external-link fa-fw"></i> View Online</a>');
+      $('#' + upDivId + ' .panel-body .row').prepend('<a href="https://www.kuuzu.org/?RPC&GotoReleaseAnnouncement&v=kuuzu-' + version + '-ou" class="pull-right btn btn-info btn-sm" target="_blank"><i class="fa fa-external-link fa-fw"></i> View Online</a>');
     }).fail(function() {
       $('#' + upDivId + ' .panel-body .row').html('Error: Could not retrieve release notes for this version. <a data-action="showVersionBlock" class="btn btn-danger btn-sm"><i class="fa fa-refresh"></i> Retry</a>');
 

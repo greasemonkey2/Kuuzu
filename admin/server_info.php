@@ -98,7 +98,7 @@ if ($action == 'export') {
 <table class="table table-hover">
   <tbody>
     <tr>
-      <td><strong><?= KUUZU::getDef('title_oscom_version'); ?></strong></td>
+      <td><strong><?= KUUZU::getDef('title_kuuzu_version'); ?></strong></td>
       <td><?= KUUZU::getVersion(); ?></td>
     </tr>
     <tr>

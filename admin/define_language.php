@@ -75,12 +75,12 @@
             
 ?>
             <div id="section_general_content_<?php echo $languages[$i]['directory']; ?>" class="tab-pane <?= ($i === 0 ? 'active' : ''); ?>">
-                <div class="panel panel-info oscom-panel">
+                <div class="panel panel-info kuuzu-panel">
                     <div class="panel-body">
                         <div class="container-fluid">
                             <div class="row">
 
-                                <table class="oscom-table table table-bordered table-hover">
+                                <table class="kuuzu-table table table-bordered table-hover">
                                     
                                     <thead>
                                         <tr class="info">
@@ -129,7 +129,7 @@
     }
     if ( empty($action) && !isset($_GET['content_group']) ) {
     ?>
-        <table class="oscom-table table table-bordered table-hover">
+        <table class="kuuzu-table table table-bordered table-hover">
             
             <thead>
                 <tr class="info">

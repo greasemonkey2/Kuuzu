@@ -651,7 +651,7 @@ function updateNet() {
 
   <div class="tab-content">
     <div id="section_general_content" class="tab-pane active">
-      <div class="panel panel-primary oscom-panel">
+      <div class="panel panel-primary kuuzu-panel">
         <div class="panel-body">
           <div class="container-fluid">
             <div class="row">
@@ -673,7 +673,7 @@ function updateNet() {
 ?>
 
                   <div id="section_general_content_<?php echo $languages[$i]['directory']; ?>" class="tab-pane <?= ($i === 0 ? 'active' : ''); ?>">
-                    <div class="panel panel-info oscom-panel">
+                    <div class="panel panel-info kuuzu-panel">
                       <div class="panel-body">
                         <div class="container-fluid">
                           <div class="row">
@@ -705,7 +705,7 @@ function updateNet() {
     </div>
 
     <div id="section_data_content" class="tab-pane">
-      <div class="panel panel-primary oscom-panel">
+      <div class="panel panel-primary kuuzu-panel">
         <div class="panel-body">
           <div class="container-fluid">
             <div class="row">
@@ -758,7 +758,7 @@ updateGross();
     </div>
 
     <div id="section_images_content" class="tab-pane">
-      <div class="panel panel-primary oscom-panel">
+      <div class="panel panel-primary kuuzu-panel">
         <div class="panel-body">
           <div class="container-fluid">
             <div class="row bg-info" style="padding: 10px;">
@@ -1199,7 +1199,7 @@ $(function() {
   if ($show_listing === true) {
 ?>
 
-<table class="oscom-table table table-hover">
+<table class="kuuzu-table table table-hover">
   <thead>
     <tr class="info">
       <th><?= KUUZU::getDef('table_heading_categories_products'); ?></th>

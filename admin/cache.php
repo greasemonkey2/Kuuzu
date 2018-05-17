@@ -57,7 +57,7 @@
 
 <h2><i class="fa fa-database"></i> <a href="<?= KUUZU::link('cache.php'); ?>"><?= KUUZU::getDef('heading_title'); ?></a></h2>
 
-<table class="oscom-table table table-hover">
+<table class="kuuzu-table table table-hover">
   <thead>
     <tr class="info">
       <th><?= KUUZU::getDef('table_heading_cache'); ?></th>

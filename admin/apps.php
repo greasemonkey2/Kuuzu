@@ -94,7 +94,7 @@
 
 <h3>Installed Apps</h3>
 
-<table id="appsInstalledTable" class="oscom-table table table-hover">
+<table id="appsInstalledTable" class="kuuzu-table table table-hover">
   <thead>
     <tr class="info">
       <th><?= KUUZU::getDef('table_heading_apps'); ?></th>

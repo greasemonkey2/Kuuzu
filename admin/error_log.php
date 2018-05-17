@@ -97,7 +97,7 @@
 
 <h2><i class="fa fa-exclamation-circle"></i> <a href="<?= KUUZU::link('error_log.php'); ?>"><?= KUUZU::getDef('heading_title'); ?></a></h2>
 
-<table class="oscom-table table table-hover">
+<table class="kuuzu-table table table-hover">
   <thead>
     <tr class="info">
       <th><?= KUUZU::getDef('table_heading_filename'); ?></th>

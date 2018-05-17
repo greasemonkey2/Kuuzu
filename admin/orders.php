@@ -166,7 +166,7 @@
   </ul>
 
   <div class="tab-content">
-    <div id="section_summary_content" class="tab-pane active oscom-m-top-15">
+    <div id="section_summary_content" class="tab-pane active kuuzu-m-top-15">
       <div class="row">
         <div class="col-sm-4">
           <div class="panel panel-info">
@@ -220,7 +220,7 @@
       if (tep_not_null($order->info['cc_type']) || tep_not_null($order->info['cc_owner']) || tep_not_null($order->info['cc_number'])) {
 ?>
 
-              <table class="oscom-table table oscom-table-borderless table-condensed">
+              <table class="kuuzu-table table kuuzu-table-borderless table-condensed">
                 <tbody>
                   <tr>
                     <td><?= KUUZU::getDef('entry_credit_card_type'); ?></td>
@@ -275,7 +275,7 @@
     </div>
 
     <div id="section_products_content" class="tab-pane">
-      <table class="oscom-table table table-hover">
+      <table class="kuuzu-table table table-hover">
         <thead>
           <tr class="info">
             <th colspan="2"><?= KUUZU::getDef('table_heading_products'); ?></th>
@@ -317,7 +317,7 @@
         </tbody>
       </table>
 
-      <table class="oscom-table table oscom-table-borderless table-condensed">
+      <table class="kuuzu-table table kuuzu-table-borderless table-condensed">
         <tbody>
 
 <?php
@@ -333,7 +333,7 @@
       </table>
     </div>
 
-    <div id="section_status_history_content" class="tab-pane oscom-m-top-15">
+    <div id="section_status_history_content" class="tab-pane kuuzu-m-top-15">
       <?= HTML::form('status', KUUZU::link(FILENAME_ORDERS, tep_get_all_get_params(array('action')) . 'action=update_order')); ?>
 
         <div class="form-group">
@@ -369,7 +369,7 @@
         </div>
       </form>
 
-      <table class="oscom-table table table-hover">
+      <table class="kuuzu-table table table-hover">
         <thead>
           <tr class="info">
             <th><?= KUUZU::getDef('table_heading_date_added'); ?></th>
@@ -456,7 +456,7 @@
          '</form>';
 ?>
 
-<table class="oscom-table table table-hover">
+<table class="kuuzu-table table table-hover">
   <thead>
     <tr class="info">
       <th><?= KUUZU::getDef('table_heading_customers'); ?></th>
