@@ -29,7 +29,7 @@ class Session
         $obj = new $class_name();
 
         if (!isset($name)) {
-            $name = 'oscomid';
+            $name = 'kuuzuid';
         }
 
         $obj->setName($name);
