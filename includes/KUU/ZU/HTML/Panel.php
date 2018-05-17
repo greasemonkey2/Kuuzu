@@ -20,7 +20,7 @@ class Panel
             $params['type'] = 'default';
         }
 
-        $result = '<div class="panel panel-' . $params['type'] . ' oscom-panel"';
+        $result = '<div class="panel panel-' . $params['type'] . ' kuuzu-panel"';
 
         if (isset($params['params'])) {
             $result .= ' ' . $params['params'];
