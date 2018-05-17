@@ -3,7 +3,7 @@ heading_title = Server Information
 button_php_info = PHP Info
 button_submit_to_kuuzu = Submit to Kuuzu
 
-title_oscom_version = Kuuzu Version:
+title_kuuzu_version = Kuuzu Version:
 title_server_host = Server Host:
 title_server_os = Server OS:
 title_server_date = Server Date:
