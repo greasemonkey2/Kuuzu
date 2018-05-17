@@ -35,7 +35,7 @@
     $breadcrumb->add($Qproduct->value('products_model'), KUUZU::link('product_info.php', 'cPath=' . $cPath . '&products_id=' . $Qproduct->valueInt('products_id')));
   }
 
-  require($oscTemplate->getFile('template_top.php'));
+  require($kuuTemplate->getFile('template_top.php'));
 
   if ($product_exists === false) {
 ?>
@@ -235,7 +235,7 @@
   </div>
 
   <div class="row">
-    <?php echo $oscTemplate->getContent('product_info'); ?>
+    <?php echo $kuuTemplate->getContent('product_info'); ?>
   </div>
 
 <?php
@@ -259,6 +259,6 @@
 <?php
   }
 
-  require($oscTemplate->getFile('template_bottom.php'));
+  require($kuuTemplate->getFile('template_bottom.php'));
   require('includes/application_bottom.php');
 ?>
