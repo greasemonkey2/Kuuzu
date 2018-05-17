@@ -102,8 +102,8 @@ class Apps
         if (strpos($app, '\\') !== false) {
             list($vendor, $app) = explode('\\', $app, 2);
 
-            if (class_exists('OSC\Apps\\' . $vendor . '\\' . $app . '\\' . $app)) {
-                if (is_subclass_of('OSC\Apps\\' . $vendor . '\\' . $app . '\\' . $app, 'KUU\ZU\AppAbstract')) {
+            if (class_exists('KUU\Apps\\' . $vendor . '\\' . $app . '\\' . $app)) {
+                if (is_subclass_of('KUU\Apps\\' . $vendor . '\\' . $app . '\\' . $app, 'KUU\ZU\AppAbstract')) {
                     return true;
                 } else {
                     trigger_error('KUU\ZU\Apps::exists(): ' . $vendor . '\\' . $app . ' - App is not a subclass of KUU\ZU\AppAbstract and cannot be loaded.');
@@ -197,7 +197,7 @@ class Apps
         }
 
         return call_user_func([
-            'OSC\Sites\\' . KUUZU::getSite() . '\\' . KUUZU::getSite(),
+            'KUU\Sites\\' . KUUZU::getSite() . '\\' . KUUZU::getSite(),
             'resolveRoute'
         ], $route, $routes);
     }

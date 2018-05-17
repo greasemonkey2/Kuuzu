@@ -52,7 +52,7 @@ class KUUZU
     }
 
     public static function siteExists($site, $strict = true) {
-        $class = 'OSC\Sites\\' . $site . '\\' . $site;
+        $class = 'KUU\Sites\\' . $site . '\\' . $site;
 
         if (class_exists($class)) {
             if (is_subclass_of($class, 'KUU\ZU\SitesInterface')) {
@@ -84,7 +84,7 @@ class KUUZU
 
         static::$site = $site;
 
-        $class = 'OSC\Sites\\' . $site . '\\' . $site;
+        $class = 'KUU\Sites\\' . $site . '\\' . $site;
 
         $KUUZU_Site = new $class();
         Registry::set('Site', $KUUZU_Site);
@@ -347,7 +347,7 @@ class KUUZU
 
     public static function autoload($class)
     {
-        $prefix = 'OSC\\';
+        $prefix = 'KUU\\';
 
         if (strncmp($prefix, $class, strlen($prefix)) !== 0) {
             return false;
@@ -358,7 +358,7 @@ class KUUZU
           $custom = dirname(KUUZU_BASE_DIR) . '/' . str_replace(['KUU\ZU\\', '\\'], ['KUU\Custom\ZU\\', '/'], $class) . '.php';
         } else {
           $file = dirname(KUUZU_BASE_DIR) . '/' . str_replace('\\', '/', $class) . '.php';
-          $custom = str_replace('OSC/OM/', 'KUU/Custom/ZU/', $file);
+          $custom = str_replace('KUU/ZU/', 'KUU/Custom/ZU/', $file);
         }
 
         if (is_file($custom)) {

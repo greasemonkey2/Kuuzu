@@ -99,7 +99,7 @@ abstract class PagesAbstract implements \KUU\ZU\PagesInterface
 
                 $ns = explode('\\', $class);
 
-                if ((count($ns) > 2) && ($ns[0] == 'OSC') && ($ns[1] == 'Apps')) {
+                if ((count($ns) > 2) && ($ns[0] == 'KUU') && ($ns[1] == 'Apps')) {
                     if (isset($this->app) && is_subclass_of($this->app, 'KUU\ZU\AppAbstract')) {
                         if ($this->app->definitionsExist(implode('/', array_slice($ns, 4)))) {
                             $this->app->loadDefinitions(implode('/', array_slice($ns, 4)));
