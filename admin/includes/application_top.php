@@ -18,7 +18,7 @@
 // Set the level of error reporting
   error_reporting(E_ALL & ~E_DEPRECATED);
 
-  require(KUUZU_BASE_DIR . 'OM/KUUZU.php');
+  require(KUUZU_BASE_DIR . 'ZU/KUUZU.php');
   spl_autoload_register('KUU\ZU\KUUZU::autoload');
 
   KUUZU::initialize();
