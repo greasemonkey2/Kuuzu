@@ -12,7 +12,7 @@
 
 // start the timer for the page parse time log
   define('PAGE_PARSE_START_TIME', microtime());
-  define('KUUZU_BASE_DIR', __DIR__ . '/OSC/');
+  define('KUUZU_BASE_DIR', __DIR__ . '/KUU/');
 
 // set the level of error reporting
   error_reporting(E_ALL & ~E_DEPRECATED);
