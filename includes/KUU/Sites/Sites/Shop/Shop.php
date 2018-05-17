@@ -133,16 +133,16 @@ class Shop extends \KUU\ZU\SitesAbstract
                 $page_namespace = explode('\\', $page);
                 $page_code = $page_namespace[count($page_namespace)-1];
 
-                if (class_exists('OSC\Apps\\' . $vendor_app . '\\' . $page . '\\' . $page_code)) {
-                    $class = 'OSC\Apps\\' . $vendor_app . '\\' . $page . '\\' . $page_code;
+                if (class_exists('KUU\Apps\\' . $vendor_app . '\\' . $page . '\\' . $page_code)) {
+                    $class = 'KUU\Apps\\' . $vendor_app . '\\' . $page . '\\' . $page_code;
                 }
             } else {
                 $req = basename(array_keys($_GET)[0]);
 
-                if (class_exists('OSC\Sites\\' . $this->code . '\Pages\\' . $req . '\\' . $req)) {
+                if (class_exists('KUU\Sites\\' . $this->code . '\Pages\\' . $req . '\\' . $req)) {
                     $page_code = $req;
 
-                    $class = 'OSC\Sites\\' . $this->code . '\Pages\\' . $page_code . '\\' . $page_code;
+                    $class = 'KUU\Sites\\' . $this->code . '\Pages\\' . $page_code . '\\' . $page_code;
                 }
             }
         }
@@ -153,7 +153,7 @@ class Shop extends \KUU\ZU\SitesAbstract
 
                 $this->page->runActions();
             } else {
-                trigger_error('OSC\Sites\Shop\Shop::setPage() - ' . $page_code . ': Page does not implement KUU\ZU\PagesInterface and cannot be loaded.');
+                trigger_error('KUU\Sites\Shop\Shop::setPage() - ' . $page_code . ': Page does not implement KUU\ZU\PagesInterface and cannot be loaded.');
             }
         }
     }
