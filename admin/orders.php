@@ -494,7 +494,7 @@
     <tr>
       <td><?= '<a href="' . KUUZU::link('orders.php', tep_get_all_get_params(array('oID', 'action')) . 'oID=' . $Qorders->valueInt('orders_id') . '&action=edit') . '">' . $Qorders->value('customers_name') . '</a> <small class="text-muted">#' . $Qorders->valueInt('orders_id') . '</small>'; ?></td>
       <td class="text-right"><?= strip_tags($Qorders->value('order_total')) . ' <small class="text-muted">' . $Qorders->value('currency') . '</small>'; ?></td>
-      <td><div class="oscom-truncate" style="width: 150px;"><small class="text-muted"><?= $Qorders->value('payment_method'); ?></small></div></td>
+      <td><div class="kuuzu-truncate" style="width: 150px;"><small class="text-muted"><?= $Qorders->value('payment_method'); ?></small></div></td>
       <td class="text-right"><?= DateTime::toShort($Qorders->value('date_purchased'), true); ?></td>
       <td class="text-right"><?= $Qorders->value('orders_status_name'); ?></td>
       <td class="action"><?=
