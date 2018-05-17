@@ -155,10 +155,10 @@
           <ul class="dropdown-menu">
             <li><a href="<?= KUUZU::link('Shop/'); ?>">View Shop</a></li>
             <li class="divider"></li>
-            <li><a href="https://www.oscommerce.com">osCommerce Website</a></li>
-            <li><a href="https://www.oscommerce.com/Support">Help and Support</a></li>
-            <li><a href="https://library.oscommerce.com">Documentation</a></li>
-            <li><a href="http://forums.oscommerce.com">Community Forum</a></li>
+            <li><a href="https://kuuzu.org">Kuuzu Website</a></li>
+            <li><a href="https://kuuzu.org/Support">Help and Support</a></li>
+            <li><a href="https://library.kuuzu.org">Documentation</a></li>
+            <li><a href="http://kuuzu.org/forum">Community Forum</a></li>
           </ul>
         </li>
       </ul>
