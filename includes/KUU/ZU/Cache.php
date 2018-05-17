@@ -28,7 +28,7 @@ class Cache
     public function setKey($key)
     {
         if (!$this->hasSafeName($key)) {
-            trigger_error('OSC\\OM\\Cache: Invalid key name (\'' . $key . '\'). Valid characters are a-zA-Z0-9-_');
+            trigger_error('KUU\\ZU\\Cache: Invalid key name (\'' . $key . '\'). Valid characters are a-zA-Z0-9-_');
 
             return false;
         }
@@ -99,7 +99,7 @@ class Cache
     public static function find($key, $strict = true)
     {
         if (!static::hasSafeName($key)) {
-            trigger_error('OSC\\OM\\Cache::find(): Invalid key name (\'' . $key . '\'). Valid characters are a-zA-Z0-9-_');
+            trigger_error('KUU\\ZU\\Cache::find(): Invalid key name (\'' . $key . '\'). Valid characters are a-zA-Z0-9-_');
 
             return false;
         }
@@ -142,7 +142,7 @@ class Cache
     public static function clear($key)
     {
         if (!static::hasSafeName($key)) {
-            trigger_error('OSC\\OM\\Cache::clear(): Invalid key name (\'' . $key . '\'). Valid characters are a-zA-Z0-9-_');
+            trigger_error('KUU\\ZU\\Cache::clear(): Invalid key name (\'' . $key . '\'). Valid characters are a-zA-Z0-9-_');
 
             return false;
         }

@@ -184,7 +184,7 @@ class DbStatement extends \PDOStatement
         $this->cache_empty_results = $cache_empty_results;
 
         if ($this->query_call != 'prepare') {
-            trigger_error('OSC\\OM\\DbStatement::setCache(): Cannot set cache (\'' . $key . '\') on a non-prepare query. Please change the query to a prepare() query.');
+            trigger_error('KUU\\ZU\\DbStatement::setCache(): Cannot set cache (\'' . $key . '\') on a non-prepare query. Please change the query to a prepare() query.');
         }
     }
 

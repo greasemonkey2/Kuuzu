@@ -48,7 +48,7 @@ class Hash
             return $password;
         }
 
-        trigger_error('OSC\\OM\\Hash::encrypt() Algorithm "' . $algo . '" unknown.');
+        trigger_error('KUU\\ZU\\Hash::encrypt() Algorithm "' . $algo . '" unknown.');
 
         return false;
     }

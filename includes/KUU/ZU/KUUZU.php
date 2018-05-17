@@ -353,12 +353,12 @@ class KUUZU
             return false;
         }
 
-        if (strncmp($prefix . 'OM\Module\\', $class, strlen($prefix . 'OM\Module\\')) === 0) { // TODO remove and fix namespace
+        if (strncmp($prefix . 'ZU\Module\\', $class, strlen($prefix . 'ZU\Module\\')) === 0) { // TODO remove and fix namespace
           $file = dirname(KUUZU_BASE_DIR) . '/' . str_replace(['KUU\ZU\\', '\\'], ['', '/'], $class) . '.php';
-          $custom = dirname(KUUZU_BASE_DIR) . '/' . str_replace(['KUU\ZU\\', '\\'], ['OSC\Custom\OM\\', '/'], $class) . '.php';
+          $custom = dirname(KUUZU_BASE_DIR) . '/' . str_replace(['KUU\ZU\\', '\\'], ['KUU\Custom\ZU\\', '/'], $class) . '.php';
         } else {
           $file = dirname(KUUZU_BASE_DIR) . '/' . str_replace('\\', '/', $class) . '.php';
-          $custom = str_replace('OSC/OM/', 'OSC/Custom/OM/', $file);
+          $custom = str_replace('OSC/OM/', 'KUU/Custom/ZU/', $file);
         }
 
         if (is_file($custom)) {
